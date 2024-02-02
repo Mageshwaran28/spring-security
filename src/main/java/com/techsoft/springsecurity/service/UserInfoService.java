@@ -28,8 +28,9 @@ public class UserInfoService implements UserDetailsService {
     }
     public String addUser(UserInfo userInfo) throws UnknownHostException{
         userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));
-        // InetAddress address = InetAddress.getLocalHost();
+        InetAddress address = InetAddress.getLocalHost();
         // System.out.println(address.getHostAddress());
+        userInfo.setIpAddress(address.getHostAddress());
         userInfoRepository.save(userInfo);
         return "User added successfully";
     }

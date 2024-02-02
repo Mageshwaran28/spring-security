@@ -20,5 +20,5 @@ public class UserInfo {
     private String email;
     private String roles;
     private String password;
-    // private String ipAddress;
+    private String ipAddress;
 }
